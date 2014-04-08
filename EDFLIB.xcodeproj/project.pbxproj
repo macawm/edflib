@@ -1,0 +1,377 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D48FDB71297017C00799BF4 /* EDFAnnotation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D48F0221296FD6C00799BF4 /* EDFAnnotation.h */; };
+		7D48FDB81297017C00799BF4 /* EDFDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D48F0231296FD6C00799BF4 /* EDFDate.h */; };
+		7D48FDBA1297017C00799BF4 /* EDFFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D48F0251296FD6C00799BF4 /* EDFFile.h */; };
+		7D48FDBB1297017C00799BF4 /* EDFHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D48F0261296FD6C00799BF4 /* EDFHeader.h */; };
+		7D48FDBC1297017C00799BF4 /* EDFParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D48F0271296FD6C00799BF4 /* EDFParser.h */; };
+		7D48FDBD1297017C00799BF4 /* EDFPatient.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D48F0281296FD6C00799BF4 /* EDFPatient.h */; };
+		7D48FDBE1297017C00799BF4 /* EDFTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D48F0291296FD6C00799BF4 /* EDFTime.h */; };
+		7D48FDBF1297017C00799BF4 /* EDFUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D48F02A1296FD6C00799BF4 /* EDFUtil.h */; };
+		7D48FDC01297018500799BF4 /* EDFAnnotation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02B1296FD8400799BF4 /* EDFAnnotation.cpp */; };
+		7D48FDC11297018500799BF4 /* EDFDate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02C1296FD8400799BF4 /* EDFDate.cpp */; };
+		7D48FDC21297018500799BF4 /* EDFFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02D1296FD8400799BF4 /* EDFFile.cpp */; };
+		7D48FDC31297018500799BF4 /* EDFHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02E1296FD8400799BF4 /* EDFHeader.cpp */; };
+		7D48FDC41297018500799BF4 /* EDFParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02F1296FD8400799BF4 /* EDFParser.cpp */; };
+		7D48FDC51297018500799BF4 /* EDFPatient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F0301296FD8400799BF4 /* EDFPatient.cpp */; };
+		7D48FDC61297018500799BF4 /* EDFTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F0311296FD8400799BF4 /* EDFTime.cpp */; };
+		7D48FDC71297018500799BF4 /* EDFUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F0321296FD8400799BF4 /* EDFUtil.cpp */; };
+		7D48FDD31297023300799BF4 /* edflib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D48FDB01296FF0D00799BF4 /* edflib.a */; };
+		7D48FDEF129702CF00799BF4 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48FDAA1296FEDF00799BF4 /* test.cpp */; };
+		7D8B926312B3F88100648A37 /* EDFSignalData.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBBC05D129CF24700C7428C /* EDFSignalData.h */; };
+		7DBBC060129CF24700C7428C /* EDFSignalData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DBBC05E129CF24700C7428C /* EDFSignalData.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7D48F0221296FD6C00799BF4 /* EDFAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFAnnotation.h; sourceTree = "<group>"; };
+		7D48F0231296FD6C00799BF4 /* EDFDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFDate.h; sourceTree = "<group>"; };
+		7D48F0251296FD6C00799BF4 /* EDFFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFFile.h; sourceTree = "<group>"; };
+		7D48F0261296FD6C00799BF4 /* EDFHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFHeader.h; sourceTree = "<group>"; };
+		7D48F0271296FD6C00799BF4 /* EDFParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFParser.h; sourceTree = "<group>"; };
+		7D48F0281296FD6C00799BF4 /* EDFPatient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFPatient.h; sourceTree = "<group>"; };
+		7D48F0291296FD6C00799BF4 /* EDFTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFTime.h; sourceTree = "<group>"; };
+		7D48F02A1296FD6C00799BF4 /* EDFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFUtil.h; sourceTree = "<group>"; };
+		7D48F02B1296FD8400799BF4 /* EDFAnnotation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFAnnotation.cpp; sourceTree = "<group>"; };
+		7D48F02C1296FD8400799BF4 /* EDFDate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFDate.cpp; sourceTree = "<group>"; };
+		7D48F02D1296FD8400799BF4 /* EDFFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFFile.cpp; sourceTree = "<group>"; };
+		7D48F02E1296FD8400799BF4 /* EDFHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFHeader.cpp; sourceTree = "<group>"; };
+		7D48F02F1296FD8400799BF4 /* EDFParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFParser.cpp; sourceTree = "<group>"; };
+		7D48F0301296FD8400799BF4 /* EDFPatient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFPatient.cpp; sourceTree = "<group>"; };
+		7D48F0311296FD8400799BF4 /* EDFTime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFTime.cpp; sourceTree = "<group>"; };
+		7D48F0321296FD8400799BF4 /* EDFUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFUtil.cpp; sourceTree = "<group>"; };
+		7D48FDAA1296FEDF00799BF4 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
+		7D48FDB01296FF0D00799BF4 /* edflib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = edflib.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D48FDCF1297020300799BF4 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; wrapsLines = 0; };
+		7DBBC05D129CF24700C7428C /* EDFSignalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFSignalData.h; sourceTree = "<group>"; };
+		7DBBC05E129CF24700C7428C /* EDFSignalData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFSignalData.cpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D48FDAE1296FF0D00799BF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D48FDCD1297020300799BF4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D48FDD31297023300799BF4 /* edflib.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D48F0151296FD3700799BF4 = {
+			isa = PBXGroup;
+			children = (
+				7D48F0211296FD5100799BF4 /* Misc */,
+				7D48F0201296FD4B00799BF4 /* Headers */,
+				7D48F01F1296FD4400799BF4 /* Source */,
+				7D48FDB11296FF0D00799BF4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7D48F01F1296FD4400799BF4 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				7DBBC05E129CF24700C7428C /* EDFSignalData.cpp */,
+				7D48F02B1296FD8400799BF4 /* EDFAnnotation.cpp */,
+				7D48F02C1296FD8400799BF4 /* EDFDate.cpp */,
+				7D48F02D1296FD8400799BF4 /* EDFFile.cpp */,
+				7D48F02E1296FD8400799BF4 /* EDFHeader.cpp */,
+				7D48F02F1296FD8400799BF4 /* EDFParser.cpp */,
+				7D48F0301296FD8400799BF4 /* EDFPatient.cpp */,
+				7D48F0311296FD8400799BF4 /* EDFTime.cpp */,
+				7D48F0321296FD8400799BF4 /* EDFUtil.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		7D48F0201296FD4B00799BF4 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				7DBBC05D129CF24700C7428C /* EDFSignalData.h */,
+				7D48F0221296FD6C00799BF4 /* EDFAnnotation.h */,
+				7D48F0231296FD6C00799BF4 /* EDFDate.h */,
+				7D48F0251296FD6C00799BF4 /* EDFFile.h */,
+				7D48F0261296FD6C00799BF4 /* EDFHeader.h */,
+				7D48F0271296FD6C00799BF4 /* EDFParser.h */,
+				7D48F0281296FD6C00799BF4 /* EDFPatient.h */,
+				7D48F0291296FD6C00799BF4 /* EDFTime.h */,
+				7D48F02A1296FD6C00799BF4 /* EDFUtil.h */,
+			);
+			name = Headers;
+			sourceTree = "<group>";
+		};
+		7D48F0211296FD5100799BF4 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				7D48FDAA1296FEDF00799BF4 /* test.cpp */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		7D48FDB11296FF0D00799BF4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D48FDB01296FF0D00799BF4 /* edflib.a */,
+				7D48FDCF1297020300799BF4 /* test */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7D48FDAC1296FF0D00799BF4 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D48FDB71297017C00799BF4 /* EDFAnnotation.h in Headers */,
+				7D48FDB81297017C00799BF4 /* EDFDate.h in Headers */,
+				7D48FDBA1297017C00799BF4 /* EDFFile.h in Headers */,
+				7D48FDBB1297017C00799BF4 /* EDFHeader.h in Headers */,
+				7D48FDBC1297017C00799BF4 /* EDFParser.h in Headers */,
+				7D48FDBD1297017C00799BF4 /* EDFPatient.h in Headers */,
+				7D48FDBE1297017C00799BF4 /* EDFTime.h in Headers */,
+				7D48FDBF1297017C00799BF4 /* EDFUtil.h in Headers */,
+				7D8B926312B3F88100648A37 /* EDFSignalData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7D48FDAF1296FF0D00799BF4 /* edflib */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D48FDB41296FF0E00799BF4 /* Build configuration list for PBXNativeTarget "edflib" */;
+			buildPhases = (
+				7D48FDAC1296FF0D00799BF4 /* Headers */,
+				7D48FDAD1296FF0D00799BF4 /* Sources */,
+				7D48FDAE1296FF0D00799BF4 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = edflib;
+			productName = edflib;
+			productReference = 7D48FDB01296FF0D00799BF4 /* edflib.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7D48FDCE1297020300799BF4 /* test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D48FDE21297025200799BF4 /* Build configuration list for PBXNativeTarget "test" */;
+			buildPhases = (
+				7D48FDCC1297020300799BF4 /* Sources */,
+				7D48FDCD1297020300799BF4 /* Frameworks */,
+				7D48FE2E12971FE900799BF4 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = test;
+			productName = test;
+			productReference = 7D48FDCF1297020300799BF4 /* test */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D48F0171296FD3700799BF4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 7D48F01A1296FD3700799BF4 /* Build configuration list for PBXProject "EDFLIB" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 7D48F0151296FD3700799BF4;
+			productRefGroup = 7D48FDB11296FF0D00799BF4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D48FDAF1296FF0D00799BF4 /* edflib */,
+				7D48FDCE1297020300799BF4 /* test */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D48FE2E12971FE900799BF4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D48FDAD1296FF0D00799BF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D48FDC01297018500799BF4 /* EDFAnnotation.cpp in Sources */,
+				7D48FDC11297018500799BF4 /* EDFDate.cpp in Sources */,
+				7D48FDC21297018500799BF4 /* EDFFile.cpp in Sources */,
+				7D48FDC31297018500799BF4 /* EDFHeader.cpp in Sources */,
+				7D48FDC41297018500799BF4 /* EDFParser.cpp in Sources */,
+				7D48FDC51297018500799BF4 /* EDFPatient.cpp in Sources */,
+				7D48FDC61297018500799BF4 /* EDFTime.cpp in Sources */,
+				7D48FDC71297018500799BF4 /* EDFUtil.cpp in Sources */,
+				7DBBC060129CF24700C7428C /* EDFSignalData.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D48FDCC1297020300799BF4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D48FDEF129702CF00799BF4 /* test.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		7D48F0181296FD3700799BF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		7D48F0191296FD3700799BF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+			};
+			name = Release;
+		};
+		7D48FDB21296FF0D00799BF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				EXECUTABLE_PREFIX = "";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PREBINDING = NO;
+				PRODUCT_NAME = edflib;
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Debug;
+		};
+		7D48FDB31296FF0D00799BF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EXECUTABLE_PREFIX = "";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PREBINDING = NO;
+				PRODUCT_NAME = edflib;
+				STANDARD_C_PLUS_PLUS_LIBRARY_TYPE = dynamic;
+				VALID_ARCHS = "i386 x86_64";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		7D48FDD11297020300799BF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = "";
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = test;
+				VALID_ARCHS = "i386 x86_64";
+			};
+			name = Debug;
+		};
+		7D48FDD21297020300799BF4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = "";
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = test;
+				VALID_ARCHS = "i386 x86_64";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D48F01A1296FD3700799BF4 /* Build configuration list for PBXProject "EDFLIB" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D48F0181296FD3700799BF4 /* Debug */,
+				7D48F0191296FD3700799BF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D48FDB41296FF0E00799BF4 /* Build configuration list for PBXNativeTarget "edflib" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D48FDB21296FF0D00799BF4 /* Debug */,
+				7D48FDB31296FF0D00799BF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D48FDE21297025200799BF4 /* Build configuration list for PBXNativeTarget "test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D48FDD11297020300799BF4 /* Debug */,
+				7D48FDD21297020300799BF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7D48F0171296FD3700799BF4 /* Project object */;
+}
