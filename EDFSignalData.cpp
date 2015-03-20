@@ -5,6 +5,8 @@
  */
 
 #include "EDFSignalData.h"
+#include <iomanip>
+#include <cmath>
 
 EDFSignalData::EDFSignalData(double newFrequency, double max, double min) {
     this->max = max;
@@ -28,6 +30,28 @@ EDFSignalData& EDFSignalData::operator=(const EDFSignalData& rhs) {
     data = rhs.data;
     
     return *this;
+}
+
+std::ostream& operator<<(std::ostream& s, EDFSignalData& data) {
+    vector<int16_t> raw = data.getData();
+    s << std::endl << data.getLength() / data.getFrequency() << " seconds  " << data.getLength() << " samples" << std::endl;
+    
+    int width = 0;
+    int l = data.getLength();
+    while (l > 0) {
+        l /= 10;
+        width++;
+    }
+    
+    int i = 0;
+    for (vector<int16_t>::iterator it = raw.begin(); it != raw.end(); it++, i++) {
+        if (i % 20 == 0)
+            s << std::endl << std::setw(width) << i << ":  ";
+        s << *it << " ";
+    }
+    s << std::endl << std::endl;
+    
+    return s;
 }
 
 void EDFSignalData::addElement(int16_t val) {
