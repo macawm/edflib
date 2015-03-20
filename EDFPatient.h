@@ -13,37 +13,34 @@
 
 using std::string;
 
+enum class Gender { UNKNOWN, MALE, FEMALE };
+
 class EDFPatient {
 public:
-    enum GENDER { UNKNOWN, MALE, FEMALE };
-
-    EDFPatient() {};
-    EDFPatient(string, string, string, string, GENDER, string);
+    EDFPatient();
+    EDFPatient(string, string, string, Gender, string);
     EDFPatient(const EDFPatient&);
-    virtual ~EDFPatient();
+    virtual ~EDFPatient() {};
 
     EDFPatient& operator=(const EDFPatient&);
     friend std::ostream& operator<<(std::ostream&, EDFPatient);
 
-    string getId();
     string getCode();
     string getName();
     string getAdditional();
-    GENDER getGender();
+    Gender getGender();
     string getBirthdate();
 
-    void setId(string);
     void setCode(string);
     void setName(string);
     void setAdditional(string);
-    void setGender(GENDER);
+    void setGender(Gender);
     void setBirthdate(string);
 private:
-    string id;
     string code;
     string name;
     string additional;
-    GENDER gender;
+    Gender gender;
     string birthdate;
 };
 
