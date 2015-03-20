@@ -14,11 +14,14 @@ using std::vector;
 
 class EDFSignalData {
 public:
+    // TODO: documentation
     EDFSignalData(double, double, double);
     EDFSignalData(const EDFSignalData&);
     virtual ~EDFSignalData();
     
     EDFSignalData& operator=(const EDFSignalData&);
+    friend std::ostream& operator<<(std::ostream&, EDFSignalData&);
+    
     void addElement(int16_t);
     void addElements(vector<int16_t>);
     void addElements(int16_t*, int);

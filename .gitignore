@@ -1,3 +1,5 @@
 EDFLIB.xcodeproj/project.xcworkspace/
-EDFLIB.xcodeproj/xcuserdata/
+EDFLIB.xcodeproj/xcuserdata/*
 nbproject/private/
+.DS_Store
+DerivedData

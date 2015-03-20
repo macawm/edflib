@@ -25,19 +25,42 @@
 		7D48FDC71297018500799BF4 /* EDFUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F0321296FD8400799BF4 /* EDFUtil.cpp */; };
 		7D48FDD31297023300799BF4 /* edflib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D48FDB01296FF0D00799BF4 /* edflib.a */; };
 		7D48FDEF129702CF00799BF4 /* test.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48FDAA1296FEDF00799BF4 /* test.cpp */; };
+		7D565D931A96509900A5F816 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D565D921A96509900A5F816 /* main.cpp */; };
 		7D8B926312B3F88100648A37 /* EDFSignalData.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBBC05D129CF24700C7428C /* EDFSignalData.h */; };
+		7DB8E76B1A9BC68F00F30ACD /* EDFUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F0321296FD8400799BF4 /* EDFUtil.cpp */; };
+		7DB8E7711A9C259300F30ACD /* EDFTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F0311296FD8400799BF4 /* EDFTime.cpp */; };
+		7DB8E7751A9E32B000F30ACD /* EDFPatient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F0301296FD8400799BF4 /* EDFPatient.cpp */; };
 		7DBBC060129CF24700C7428C /* EDFSignalData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DBBC05E129CF24700C7428C /* EDFSignalData.cpp */; };
+		7DBE021B1AA79F5F00A80E09 /* EDFDate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02C1296FD8400799BF4 /* EDFDate.cpp */; };
+		7DBE021E1AB2380000A80E09 /* EDFHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02E1296FD8400799BF4 /* EDFHeader.cpp */; };
+		7DBE021F1AB249C100A80E09 /* EDFSignalData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DBBC05E129CF24700C7428C /* EDFSignalData.cpp */; };
+		7DBE02201AB249C100A80E09 /* EDFAnnotation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02B1296FD8400799BF4 /* EDFAnnotation.cpp */; };
+		7DBE02211AB249C100A80E09 /* EDFFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02D1296FD8400799BF4 /* EDFFile.cpp */; };
+		7DBE02221AB249C100A80E09 /* EDFParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02F1296FD8400799BF4 /* EDFParser.cpp */; };
+		7DBE02241AB7984700A80E09 /* EDFLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBE02231AB797FE00A80E09 /* EDFLib.h */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		7D565D8E1A96509900A5F816 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		7D48F0221296FD6C00799BF4 /* EDFAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFAnnotation.h; sourceTree = "<group>"; };
-		7D48F0231296FD6C00799BF4 /* EDFDate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFDate.h; sourceTree = "<group>"; };
-		7D48F0251296FD6C00799BF4 /* EDFFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFFile.h; sourceTree = "<group>"; };
-		7D48F0261296FD6C00799BF4 /* EDFHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFHeader.h; sourceTree = "<group>"; };
-		7D48F0271296FD6C00799BF4 /* EDFParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFParser.h; sourceTree = "<group>"; };
-		7D48F0281296FD6C00799BF4 /* EDFPatient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFPatient.h; sourceTree = "<group>"; };
-		7D48F0291296FD6C00799BF4 /* EDFTime.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFTime.h; sourceTree = "<group>"; };
-		7D48F02A1296FD6C00799BF4 /* EDFUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFUtil.h; sourceTree = "<group>"; };
+		7D48F0221296FD6C00799BF4 /* EDFAnnotation.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFAnnotation.h; sourceTree = "<group>"; };
+		7D48F0231296FD6C00799BF4 /* EDFDate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFDate.h; sourceTree = "<group>"; };
+		7D48F0251296FD6C00799BF4 /* EDFFile.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFFile.h; sourceTree = "<group>"; };
+		7D48F0261296FD6C00799BF4 /* EDFHeader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFHeader.h; sourceTree = "<group>"; };
+		7D48F0271296FD6C00799BF4 /* EDFParser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFParser.h; sourceTree = "<group>"; };
+		7D48F0281296FD6C00799BF4 /* EDFPatient.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFPatient.h; sourceTree = "<group>"; };
+		7D48F0291296FD6C00799BF4 /* EDFTime.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFTime.h; sourceTree = "<group>"; };
+		7D48F02A1296FD6C00799BF4 /* EDFUtil.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFUtil.h; sourceTree = "<group>"; };
 		7D48F02B1296FD8400799BF4 /* EDFAnnotation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFAnnotation.cpp; sourceTree = "<group>"; };
 		7D48F02C1296FD8400799BF4 /* EDFDate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFDate.cpp; sourceTree = "<group>"; };
 		7D48F02D1296FD8400799BF4 /* EDFFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFFile.cpp; sourceTree = "<group>"; };
@@ -49,8 +72,12 @@
 		7D48FDAA1296FEDF00799BF4 /* test.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = test.cpp; sourceTree = "<group>"; };
 		7D48FDB01296FF0D00799BF4 /* edflib.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = edflib.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D48FDCF1297020300799BF4 /* test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = test; sourceTree = BUILT_PRODUCTS_DIR; wrapsLines = 0; };
-		7DBBC05D129CF24700C7428C /* EDFSignalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EDFSignalData.h; sourceTree = "<group>"; };
+		7D565D8B1A955BF600A5F816 /* sample.edf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = sample.edf; sourceTree = "<group>"; };
+		7D565D901A96509900A5F816 /* Unit Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Unit Tests"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D565D921A96509900A5F816 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		7DBBC05D129CF24700C7428C /* EDFSignalData.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFSignalData.h; sourceTree = "<group>"; };
 		7DBBC05E129CF24700C7428C /* EDFSignalData.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFSignalData.cpp; sourceTree = "<group>"; };
+		7DBE02231AB797FE00A80E09 /* EDFLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EDFLib.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +96,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7D565D8D1A96509900A5F816 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -78,6 +112,8 @@
 				7D48F0211296FD5100799BF4 /* Misc */,
 				7D48F0201296FD4B00799BF4 /* Headers */,
 				7D48F01F1296FD4400799BF4 /* Source */,
+				7D565D911A96509900A5F816 /* Unit Tests */,
+				7D565D8A1A955BDB00A5F816 /* Sample Files */,
 				7D48FDB11296FF0D00799BF4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -110,6 +146,7 @@
 				7D48F0281296FD6C00799BF4 /* EDFPatient.h */,
 				7D48F0291296FD6C00799BF4 /* EDFTime.h */,
 				7D48F02A1296FD6C00799BF4 /* EDFUtil.h */,
+				7DBE02231AB797FE00A80E09 /* EDFLib.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";
@@ -127,8 +164,25 @@
 			children = (
 				7D48FDB01296FF0D00799BF4 /* edflib.a */,
 				7D48FDCF1297020300799BF4 /* test */,
+				7D565D901A96509900A5F816 /* Unit Tests */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		7D565D8A1A955BDB00A5F816 /* Sample Files */ = {
+			isa = PBXGroup;
+			children = (
+				7D565D8B1A955BF600A5F816 /* sample.edf */,
+			);
+			name = "Sample Files";
+			sourceTree = "<group>";
+		};
+		7D565D911A96509900A5F816 /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				7D565D921A96509900A5F816 /* main.cpp */,
+			);
+			path = "Unit Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +192,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DBE02241AB7984700A80E09 /* EDFLib.h in Headers */,
 				7D48FDB71297017C00799BF4 /* EDFAnnotation.h in Headers */,
 				7D48FDB81297017C00799BF4 /* EDFDate.h in Headers */,
 				7D48FDBA1297017C00799BF4 /* EDFFile.h in Headers */,
@@ -187,13 +242,35 @@
 			productReference = 7D48FDCF1297020300799BF4 /* test */;
 			productType = "com.apple.product-type.tool";
 		};
+		7D565D8F1A96509900A5F816 /* Unit Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D565D941A96509900A5F816 /* Build configuration list for PBXNativeTarget "Unit Tests" */;
+			buildPhases = (
+				7D565D8C1A96509900A5F816 /* Sources */,
+				7D565D8D1A96509900A5F816 /* Frameworks */,
+				7D565D8E1A96509900A5F816 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Unit Tests";
+			productName = "Unit Tests";
+			productReference = 7D565D901A96509900A5F816 /* Unit Tests */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		7D48F0171296FD3700799BF4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0610;
+				TargetAttributes = {
+					7D565D8F1A96509900A5F816 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
 			};
 			buildConfigurationList = 7D48F01A1296FD3700799BF4 /* Build configuration list for PBXProject "EDFLIB" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -212,6 +289,7 @@
 			targets = (
 				7D48FDAF1296FF0D00799BF4 /* edflib */,
 				7D48FDCE1297020300799BF4 /* test */,
+				7D565D8F1A96509900A5F816 /* Unit Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -257,6 +335,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7D565D8C1A96509900A5F816 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7DBE021F1AB249C100A80E09 /* EDFSignalData.cpp in Sources */,
+				7DBE02201AB249C100A80E09 /* EDFAnnotation.cpp in Sources */,
+				7DBE02211AB249C100A80E09 /* EDFFile.cpp in Sources */,
+				7DBE02221AB249C100A80E09 /* EDFParser.cpp in Sources */,
+				7DBE021E1AB2380000A80E09 /* EDFHeader.cpp in Sources */,
+				7DBE021B1AA79F5F00A80E09 /* EDFDate.cpp in Sources */,
+				7DB8E76B1A9BC68F00F30ACD /* EDFUtil.cpp in Sources */,
+				7DB8E7711A9C259300F30ACD /* EDFTime.cpp in Sources */,
+				7DB8E7751A9E32B000F30ACD /* EDFPatient.cpp in Sources */,
+				7D565D931A96509900A5F816 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
@@ -279,6 +374,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				EXECUTABLE_PREFIX = "";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -295,6 +393,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				EXECUTABLE_PREFIX = "";
@@ -313,14 +414,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
 				GCC_MODEL_TUNING = "";
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
 				INSTALL_PATH = /usr/local/bin;
 				PREBINDING = NO;
 				PRODUCT_NAME = test;
+				SDKROOT = macosx;
 				VALID_ARCHS = "i386 x86_64";
 			};
 			name = Debug;
@@ -329,6 +434,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -336,8 +443,85 @@
 				INSTALL_PATH = /usr/local/bin;
 				PREBINDING = NO;
 				PRODUCT_NAME = test;
+				SDKROOT = macosx;
 				VALID_ARCHS = "i386 x86_64";
 				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		7D565D951A96509900A5F816 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Catch/include";
+			};
+			name = Debug;
+		};
+		7D565D961A96509900A5F816 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = NO;
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				GCC_C_LANGUAGE_STANDARD = "compiler-default";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/Catch/include";
 			};
 			name = Release;
 		};
@@ -367,6 +551,15 @@
 			buildConfigurations = (
 				7D48FDD11297020300799BF4 /* Debug */,
 				7D48FDD21297020300799BF4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D565D941A96509900A5F816 /* Build configuration list for PBXNativeTarget "Unit Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D565D951A96509900A5F816 /* Debug */,
+				7D565D961A96509900A5F816 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

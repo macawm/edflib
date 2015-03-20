@@ -9,11 +9,7 @@
 #include <iomanip>
 #include <string>
 #include <vector>
-#include "EDFFile.h"
-#include "EDFUtil.h"
-#include "EDFHeader.h"
-#include "EDFAnnotation.h"
-#include "EDFSignalData.h"
+#include "EDFLib.h"
 
 using namespace std;
 
@@ -21,10 +17,10 @@ void printHeaderInfo(string filename, EDFHeader* head) {
     cout << "File \"" << filename << "\"" << endl << endl << endl;
     cout << "Header Info" << endl << endl;
     cout << "File Type            | ";
-    if (head->getFiletype() == EDFHeader::EDF)
+    if (head->getFiletype() == FileType::EDF)
         cout << "EDF" << endl;
     else
-        cout << "EDF+" << (head->getContinuity() == 0 ? "C" : "D") << endl;
+        cout << "EDF+" << (head->getContinuity() == Continuity::CONTINUOUS ? "C" : "D") << endl;
     cout << "Signal Count         | " << head->getSignalCount() << endl;
     cout << "Recording Length     | " << head->getDataRecordCount() * head->getDataRecordDuration() << " seconds" << endl;
     cout << "Start Date           | " << head->getDate() << endl;
@@ -45,14 +41,32 @@ void printHeaderInfo(string filename, EDFHeader* head) {
 void printAnnotationInfo(vector<EDFAnnotation>* annot) {
     cout << fixed << setprecision(1);
     cout << "Annotation Info" << endl << endl;
-    cout << "Annotation Count     | " << annot->size() << endl;
+    cout << "Annotations" << endl;
+    
+    int onsetWidth = 2;
+    EDFAnnotation last = *(--annot->end());
+    int l = last.getOnset();
+    while (l > 0) {
+        l /= 10;
+        onsetWidth++;
+    }
+    
+    int idxWidth = 0;
+    l = annot->size();
+    while (l > 0) {
+        l /= 10;
+        idxWidth++;
+    }
+    
     for (size_t i = 0; i < annot->size(); i++) {
-        cout << " Onset " << annot->at(i).getOnset() << "s";
-        cout << " Duration " << annot->at(i).getDuration() << "s";
+        cout << " " << std::setw(idxWidth) << i+1;
+        cout << " Onset " << std::setw(onsetWidth) << annot->at(i).getOnset() << "s";
+        cout << " Duration " << std::setw(8) << annot->at(i).getDuration() << "s";
         for (size_t j = 0; j < annot->at(i).getStrings().size(); j++)
             cout << " \"" << (annot->at(i).getStrings())[j] << "\" ";
         cout << endl;
     }
+    cout << endl;
 }
 
 void printSignalInfo(int sig, EDFHeader* head) {
@@ -91,39 +105,31 @@ void printAllSignalInfo(EDFHeader* head) {
 
 void printSignalData(EDFFile& file, int signal, float start, float length) {
     EDFSignalData* sigData = file.getSignalData(signal, start, length);
-    if (sigData) {
-        vector<int16_t> data = sigData->getData();
-        cout << endl << sigData->getLength() / sigData->getFrequency() << " seconds  " << sigData->getLength() << " samples" << endl;
-
-        int i = 0;
-        for (vector<int16_t>::iterator it = data.begin(); it != data.end(); it++, i++) {
-            if (i % 20 == 0)
-                cout << endl << i << ":  ";
-            cout << *it << " ";
-        }
-        cout << endl << endl;
-    }
+    cout << *sigData;
 }
 
 int main(int argc, char** argv) {
-    EDFFile newFile(argv[1]);
+    EDFFile *newFile = new EDFFile(argv[1]);
     int signal = atoi(argv[2]) - 1;
 
-    EDFHeader* header = newFile.getHeader();
-    vector<EDFAnnotation>* annotations = newFile.getAnnotations();
+    EDFHeader* header = newFile->getHeader();
+    vector<EDFAnnotation>* annotations = newFile->getAnnotations();
 
-    //printHeaderInfo(argv[1], header);
+    printHeaderInfo(argv[1], header);
     printSignalInfo(signal, header);
-    //printAnnotationInfo(annotations);
+    printAnnotationInfo(annotations);
+    
     double startTime = 0.0; // seconds
     double length = 2.0; // seconds
     cout << startTime << "s -> " << startTime + length << "s" << endl;
-    printSignalData(newFile, signal, startTime, length);
+    printSignalData(*newFile, signal, startTime, length);
 
-    startTime = 1.0; // seconds
-    length = 1.0; // seconds
+    startTime = 1.0;
+    length = 1.0;
     cout << startTime << "s -> " << startTime + length << "s" << endl;
-    printSignalData(newFile, signal, startTime, length);
+    printSignalData(*newFile, signal, startTime, length);
+    
+    delete newFile;
 
     return EXIT_SUCCESS;
 }

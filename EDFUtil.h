@@ -7,14 +7,19 @@
 #ifndef _EDFUTIL_H
 #define	_EDFUTIL_H
 
-#include <sstream>
 #include <string>
 
-double& a2f(std::string);
-double& a2i(std::string);
-string convertSpaces(const std::string&);
-string convertUnderscores(const std::string&);
-string trim(string);
+double a2f(std::string);
+int a2i(std::string);
+std::string convertSpaces(const std::string&);
+std::string convertUnderscores(const std::string&);
+std::string trim(std::string);
+
+#ifdef DEBUG
+#define DI(x) x;
+#else
+#define DI(x)
+#endif
 
 #endif	/* _EDFUTIL_H */
 
