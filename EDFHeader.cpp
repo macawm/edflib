@@ -18,25 +18,41 @@ using std::cerr;
 using std::endl;
 
 EDFHeader::EDFHeader() {
-    label = NULL;
-    physicalMax = NULL;
-    physicalMin = NULL;
-    digitalMax = NULL;
-    digitalMin = NULL;
-    signalSampleCount = NULL;
-    physicalDimension = NULL;
-    prefilter = NULL;
-    transducer = NULL;
-    reserved = NULL;
-    bufferOffset = NULL;
+    filetype = FileType::EDF;
+    continuity = Continuity::CONTINUOUS;
+    signalCount = 0;
+    //fileDuration = 0;
+    date = EDFDate();
+    startTime = EDFTime();
+    patient = EDFPatient();
+    recording = "";
+    recordingAdditional = "";
+    adminCode = "";
+    technician = "";
+    equipment = "";
+    dataRecordDuration = 0;
+    dataRecordCount = 0;
+    dataRecordSize = 0;
     annotationIndex = -1;
+    
+    label = nullptr;
+    physicalMax = nullptr;
+    physicalMin = nullptr;
+    digitalMax = nullptr;
+    digitalMin = nullptr;
+    signalSampleCount = nullptr;
+    physicalDimension = nullptr;
+    prefilter = nullptr;
+    transducer = nullptr;
+    reserved = nullptr;
+    bufferOffset = nullptr;
 }
 
 EDFHeader::EDFHeader(const EDFHeader& orig) {
     filetype = orig.filetype;
     continuity = orig.continuity;
     signalCount = orig.signalCount;
-    fileDuration = orig.fileDuration;
+    //fileDuration = orig.fileDuration;
     date = orig.date;
     startTime = orig.startTime;
     patient = orig.patient;
@@ -104,7 +120,7 @@ EDFHeader& EDFHeader::operator=(const EDFHeader& rhs) {
         filetype = rhs.filetype;
         continuity = rhs.continuity;
         signalCount = rhs.signalCount;
-        fileDuration = rhs.fileDuration;
+        //fileDuration = rhs.fileDuration;
         date = rhs.date;
         startTime = rhs.startTime;
         patient = rhs.patient;
@@ -119,100 +135,96 @@ EDFHeader& EDFHeader::operator=(const EDFHeader& rhs) {
         annotationIndex = rhs.annotationIndex;
 
         int sig;
-        if (label != NULL) delete [] label;
+        if (label != nullptr) delete [] label;
         label = new string[signalCount];
         for (sig = 0; sig < signalCount; sig++) label[sig] = rhs.label[sig];
 
-        if (physicalMax != NULL) delete [] physicalMax;
+        if (physicalMax != nullptr) delete [] physicalMax;
         physicalMax = new double[signalCount];
         for (sig = 0; sig < signalCount; sig++) physicalMax[sig] = rhs.physicalMax[sig];
 
-        if (physicalMin != NULL) delete [] physicalMin;
+        if (physicalMin != nullptr) delete [] physicalMin;
         physicalMin = new double[signalCount];
         for (sig = 0; sig < signalCount; sig++) physicalMin[sig] = rhs.physicalMin[sig];
 
-        if (digitalMax != NULL) delete [] digitalMax;
+        if (digitalMax != nullptr) delete [] digitalMax;
         digitalMax = new int[signalCount];
         for (sig = 0; sig < signalCount; sig++) digitalMax[sig] = rhs.digitalMax[sig];
 
-        if (digitalMin != NULL) delete [] digitalMin;
+        if (digitalMin != nullptr) delete [] digitalMin;
         digitalMin = new int[signalCount];
         for (sig = 0; sig < signalCount; sig++) digitalMin[sig] = rhs.digitalMin[sig];
 
-        if (signalSampleCount != NULL) delete [] signalSampleCount;
+        if (signalSampleCount != nullptr) delete [] signalSampleCount;
         signalSampleCount = new int[signalCount];
         for (sig = 0; sig < signalCount; sig++) signalSampleCount[sig] = rhs.signalSampleCount[sig];
 
-        if (physicalDimension != NULL) delete [] physicalDimension;
+        if (physicalDimension != nullptr) delete [] physicalDimension;
         physicalDimension = new string[signalCount];
         for (sig = 0; sig < signalCount; sig++) physicalDimension[sig] = rhs.physicalDimension[sig];
 
-        if (prefilter != NULL) delete [] prefilter;
+        if (prefilter != nullptr) delete [] prefilter;
         prefilter = new string[signalCount];
         for (sig = 0; sig < signalCount; sig++) prefilter[sig] = rhs.prefilter[sig];
 
-        if (transducer != NULL) delete [] transducer;
+        if (transducer != nullptr) delete [] transducer;
         transducer = new string[signalCount];
         for (sig = 0; sig < signalCount; sig++) transducer[sig] = rhs.transducer[sig];
 
-        if (reserved != NULL) delete [] reserved;
+        if (reserved != nullptr) delete [] reserved;
         reserved = new string[signalCount];
         for (sig = 0; sig < signalCount; sig++) reserved[sig] = rhs.reserved[sig];
 
-        if (bufferOffset != NULL) delete [] bufferOffset;
+        if (bufferOffset != nullptr) delete [] bufferOffset;
         bufferOffset = new int[signalCount];
         for (sig = 0; sig < signalCount; sig++) bufferOffset[sig] = rhs.bufferOffset[sig];
     }
     return *this;
 }
 
-void EDFHeader::setFiletype(EDFHeader::FILE_TYPE filetype) {
+void EDFHeader::setFiletype(FileType filetype) {
     this->filetype = filetype;
 }
 
-void EDFHeader::setContinuity(CONTINUITY continuity) {
+void EDFHeader::setContinuity(Continuity continuity) {
     this->continuity = continuity;
 }
 
 void EDFHeader::setSignalCount(int signalCount) {
     this->signalCount = signalCount;
 
-    if (label != NULL) delete [] label;
+    if (label != nullptr) delete [] label;
     label = new string[signalCount];
 
-    if (physicalMax != NULL) delete [] physicalMax;
+    if (physicalMax != nullptr) delete [] physicalMax;
     physicalMax = new double[signalCount];
 
-    if (physicalMin != NULL) delete [] physicalMin;
+    if (physicalMin != nullptr) delete [] physicalMin;
     physicalMin = new double[signalCount];
 
-    if (digitalMax != NULL) delete [] digitalMax;
+    if (digitalMax != nullptr) delete [] digitalMax;
     digitalMax = new int[signalCount];
 
-    if (digitalMin != NULL) delete [] digitalMin;
+    if (digitalMin != nullptr) delete [] digitalMin;
     digitalMin = new int[signalCount];
 
-    if (signalSampleCount != NULL) delete [] signalSampleCount;
+    if (signalSampleCount != nullptr) delete [] signalSampleCount;
     signalSampleCount = new int[signalCount];
 
-    if (physicalDimension != NULL) delete [] physicalDimension;
+    if (physicalDimension != nullptr) delete [] physicalDimension;
     physicalDimension = new string[signalCount];
 
-    if (prefilter != NULL) delete [] prefilter;
+    if (prefilter != nullptr) delete [] prefilter;
     prefilter = new string[signalCount];
 
-    if (transducer != NULL) delete [] transducer;
+    if (transducer != nullptr) delete [] transducer;
     transducer = new string[signalCount];
 
-    if (reserved != NULL) delete [] reserved;
+    if (reserved != nullptr) delete [] reserved;
     reserved = new string[signalCount];
 
-    if (bufferOffset != NULL) delete [] bufferOffset;
+    if (bufferOffset != nullptr) delete [] bufferOffset;
     bufferOffset = new int[signalCount];
-}
-
-void EDFHeader::setFileDuration(int fileDuration) {
-    this->fileDuration = fileDuration;
 }
 
 void EDFHeader::setDate(EDFDate date) {
@@ -260,96 +272,94 @@ void EDFHeader::setDataRecordSize(int dataRecordSize) {
 }
 
 void EDFHeader::setAnnotationIndex(int annotationIndex) {
-    if (!validSignal(annotationIndex))
+    if (!signalAvailable(annotationIndex))
         cerr << "Channel " << annotationIndex << " does not exist." << endl;
 
     this->annotationIndex = annotationIndex;
 }
 
 void EDFHeader::setLabel(int sigNum, string label) {
-    if (!validSignal(sigNum))
+    if (!signalAvailable(sigNum))
         cerr << "Channel " << sigNum << " does not exist." << endl;
 
     this->label[sigNum] = label;
 }
 
 void EDFHeader::setPhysicalMax(int sigNum, double physicalMax) {
-    if (!validSignal(sigNum))
+    if (!signalAvailable(sigNum))
         cerr << "Channel " << sigNum << " does not exist." << endl;
 
     this->physicalMax[sigNum] = physicalMax;
 }
 
 void EDFHeader::setPhysicalMin(int sigNum, double physicalMin) {
-    if (!validSignal(sigNum))
+    if (!signalAvailable(sigNum))
         cerr << "Channel " << sigNum << " does not exist." << endl;
 
     this->physicalMin[sigNum] = physicalMin;
 }
 
 void EDFHeader::setDigitalMax(int sigNum, int digitalMax) {
-    if (!validSignal(sigNum))
+    if (!signalAvailable(sigNum))
         cerr << "Channel " << sigNum << " does not exist." << endl;
 
     this->digitalMax[sigNum] = digitalMax;
 }
 
 void EDFHeader::setDigitalMin(int sigNum, int digitalMin) {
-    if (!validSignal(sigNum))
+    if (!signalAvailable(sigNum))
         cerr << "Channel " << sigNum << " does not exist." << endl;
 
     this->digitalMin[sigNum] = digitalMin;
 }
 
 void EDFHeader::setSignalSampleCount(int sigNum, int signalSampleCount) {
-    if (!validSignal(sigNum))
+    if (!signalAvailable(sigNum))
         cerr << "Channel " << sigNum << " does not exist." << endl;
 
     this->signalSampleCount[sigNum] = signalSampleCount;
 }
 
 void EDFHeader::setPhysicalDimension(int sigNum, string physicalDimension) {
-    if (!validSignal(sigNum))
+    if (!signalAvailable(sigNum))
         cerr << "Channel " << sigNum << " does not exist." << endl;
 
     this->physicalDimension[sigNum] = physicalDimension;
 }
 
 void EDFHeader::setPrefilter(int sigNum, string prefilter) {
-    if (!validSignal(sigNum))
+    if (!signalAvailable(sigNum))
         cerr << "Channel " << sigNum << " does not exist." << endl;
 
     this->prefilter[sigNum] = prefilter;
 }
 
 void EDFHeader::setTransducer(int sigNum, string transducer) {
-    if (!validSignal(sigNum))
+    if (!signalAvailable(sigNum))
         cerr << "Channel " << sigNum << " does not exist." << endl;
 
     this->transducer[sigNum] = transducer;
 }
 
 void EDFHeader::setReserved(int sigNum, string reserved) {
-    if (!validSignal(sigNum))
+    if (!signalAvailable(sigNum))
         cerr << "Channel " << sigNum << " does not exist." << endl;
 
     this->reserved[sigNum] = reserved;
 }
 
 void EDFHeader::setBufferOffset(int sigNum, int bufferOffset) {
-    if (!validSignal(sigNum))
+    if (!signalAvailable(sigNum))
         cerr << "Channel " << sigNum << " does not exist." << endl;
 
     this->bufferOffset[sigNum] = bufferOffset;
 }
 
-EDFHeader::FILE_TYPE EDFHeader::getFiletype() { return filetype; }
+FileType EDFHeader::getFiletype() { return filetype; }
 
-EDFHeader::CONTINUITY EDFHeader::getContinuity() { return continuity; }
+Continuity EDFHeader::getContinuity() { return continuity; }
 
 int EDFHeader::getSignalCount() { return signalCount; }
-
-int EDFHeader::getFileDuration() { return fileDuration; }
 
 EDFDate EDFHeader::getDate() { return date; }
 
@@ -376,94 +386,93 @@ int EDFHeader::getDataRecordSize() { return dataRecordSize; }
 int EDFHeader::getAnnotationIndex() { return annotationIndex; }
 
 string EDFHeader::getLabel(int sigNum) {
-    if (!validSignal(sigNum))
-        cerr << "Channel " << sigNum << " does not exist." << endl;
-
-    return label[sigNum];
+    if (signalAvailable(sigNum))
+        return label[sigNum];
+    else
+        return "!!!";
 }
 
 double EDFHeader::getPhysicalMax(int sigNum) {
-    if (!validSignal(sigNum))
-        cerr << "Channel " << sigNum << " does not exist." << endl;
-
-    return physicalMax[sigNum];
+    if (signalAvailable(sigNum))
+        return physicalMax[sigNum];
+    else
+        return 0;
 }
 
 double EDFHeader::getPhysicalMin(int sigNum) {
-    if (!validSignal(sigNum))
-        cerr << "Channel " << sigNum << " does not exist." << endl;
-
-    return physicalMin[sigNum];
+    if (signalAvailable(sigNum))
+        return physicalMin[sigNum];
+    else
+        return 0;
 }
 
 int EDFHeader::getDigitalMax(int sigNum) {
-    if (!validSignal(sigNum))
-        cerr << "Channel " << sigNum << " does not exist." << endl;
-
-    return digitalMax[sigNum];
+    if (signalAvailable(sigNum))
+        return digitalMax[sigNum];
+    else
+        return 0;
 }
 
 int EDFHeader::getDigitalMin(int sigNum) {
-    if (!validSignal(sigNum))
-        cerr << "Channel " << sigNum << " does not exist." << endl;
-
-    return digitalMin[sigNum];
+    if (signalAvailable(sigNum))
+        return digitalMin[sigNum];
+    else
+        return 0;
 }
 
 int EDFHeader::getSignalSampleCount(int sigNum) {
-    if (!validSignal(sigNum))
-        cerr << "Channel " << sigNum << " does not exist." << endl;
-
-    return signalSampleCount[sigNum];
+    if (signalAvailable(sigNum))
+        return signalSampleCount[sigNum];
+    else
+        return -1;
 }
 
 string EDFHeader::getPhysicalDimension(int sigNum) {
-    if (!validSignal(sigNum))
-        cerr << "Channel " << sigNum << " does not exist." << endl;
-
-    return physicalDimension[sigNum];
+    if (signalAvailable(sigNum))
+        return physicalDimension[sigNum];
+    else
+        return "!!!";
 }
 
 string EDFHeader::getPrefilter(int sigNum) {
-    if (!validSignal(sigNum))
-        cerr << "Channel " << sigNum << " does not exist." << endl;
-
-    return prefilter[sigNum];
+    if (signalAvailable(sigNum))
+        return prefilter[sigNum];
+    else
+        return "!!!";
 }
 
 string EDFHeader::getTransducer(int sigNum) {
-    if (!validSignal(sigNum))
-        cerr << "Channel " << sigNum << " does not exist." << endl;
-
-    return transducer[sigNum];
+    if (signalAvailable(sigNum))
+        return transducer[sigNum];
+    else
+        return "!!!";
 }
 
 string EDFHeader::getReserved(int sigNum) {
-    if (!validSignal(sigNum))
-        cerr << "Channel " << sigNum << " does not exist." << endl;
-
-    return reserved[sigNum];
+    if (signalAvailable(sigNum))
+        return reserved[sigNum];
+    else
+        return "!!!";
 }
 
 int EDFHeader::getBufferOffset(int sigNum) {
-    if (!validSignal(sigNum))
-        cerr << "Channel " << sigNum << " does not exist." << endl;
-
-    return bufferOffset[sigNum];
+    if (signalAvailable(sigNum))
+        return bufferOffset[sigNum];
+    else
+        return -1;
 }
 
 bool EDFHeader::hasAnnotations() {
-    if (annotationIndex > -1)
-        return true;
-    return false;
+    return annotationIndex > -1;
 }
 
-double EDFHeader::getTotalRecordingTime() {
+double EDFHeader::getRecordingTime() {
     return dataRecordCount * dataRecordDuration;
 }
 
-bool EDFHeader::validSignal(int sigNum) {
+bool EDFHeader::signalAvailable(int sigNum) {
     if (sigNum >= 0 && sigNum < signalCount)
         return true;
-    return false;
+    else
+        return false;
 }

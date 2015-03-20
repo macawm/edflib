@@ -14,20 +14,19 @@
 
 using std::string;
 
+enum class FileType { EDF, EDFPLUS };
+enum class Continuity { CONTINUOUS, DISCONTINUOUS };
+
 class EDFHeader {
 public:
-    enum FILE_TYPE { EDF, EDFPLUS };
-    enum CONTINUITY { CONTINUOUS, DISCONTINUOUS };
-
     EDFHeader();
     EDFHeader(const EDFHeader&);
     virtual ~EDFHeader();
     EDFHeader& operator=(const EDFHeader&);
 
-    void setFiletype(FILE_TYPE);
-    void setContinuity(CONTINUITY);
+    void setFiletype(FileType);
+    void setContinuity(Continuity);
     void setSignalCount(int);
-    void setFileDuration(int);
     void setDate(EDFDate);
     void setStartTime(EDFTime);
     void setPatient(EDFPatient);
@@ -53,10 +52,9 @@ public:
     void setReserved(int, string);
     void setBufferOffset(int, int);
 
-    FILE_TYPE  getFiletype();
-    CONTINUITY getContinuity();
+    FileType   getFiletype();
+    Continuity getContinuity();
     int        getSignalCount();
-    int        getFileDuration();
     EDFDate    getDate();
     EDFTime    getStartTime();
     EDFPatient getPatient();
@@ -70,6 +68,7 @@ public:
     int        getDataRecordSize();
     int        getAnnotationIndex();
 
+    bool   signalAvailable(int);
     string getLabel(int);
     double getPhysicalMax(int);
     double getPhysicalMin(int);
@@ -83,13 +82,12 @@ public:
     int    getBufferOffset(int);
 
     bool   hasAnnotations();
-    double getTotalRecordingTime();
+    double getRecordingTime();
 
 private:
-    FILE_TYPE  filetype;
-    CONTINUITY continuity;
+    FileType   filetype;
+    Continuity continuity;
     int        signalCount;
-    int        fileDuration;
     EDFDate    date;
     EDFTime    startTime;
     EDFPatient patient;
@@ -110,8 +108,6 @@ private:
     string*    transducer;
     string*    reserved;
     int*       bufferOffset;
-
-    bool       validSignal(int);
 };
 
 #endif	/* _EDFHeader_H */
