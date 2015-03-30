@@ -1,9 +1,10 @@
 /** 
- @file EDFDate.h
- @brief A model file for an EDF annotation element.
- It is comprised of a starting position (onset), a
- length of time (duration) and a set of descriptive
- strings.
+ @file EDFDate.h 
+ @brief A model object for an EDF date.
+ EDF specified dates are only valid between
+ 1/1/1985 through 12/31/2084. They are
+ formatted as such dd.mm.yy and must not
+ exclude leading zeros.
  
  @author Anthony Magee
  @date 11/4/2010
@@ -15,8 +16,6 @@
 #include <string>
 #include <ostream>
 
-using std::string;
-
 class EDFDate {
 public:
     EDFDate();
@@ -27,7 +26,7 @@ public:
      to be set to 01.01.85.
      @param date String of aforementioned format.
      */
-    EDFDate(const string&);
+    EDFDate(const std::string&);
     
     /**
      Constructor to build new date object. Out of
@@ -64,25 +63,25 @@ public:
      Get the integer day of month value.
      @return Integer in [1, 31].
      */
-    int getDay();
+    int day() const;
     
     /**
      Get the integer month of year value.
      @return Integer in [1, 12].
      */
-    int getMonth();
+    int month() const;
     
     /**
      Get the integer year value.
      @return Integer in [0, 99].
      */
-    int getYear();
+    int year() const;
     
     /**
      Get the integer four digit year value.
      @return Integer in [1985, 2084].
      */
-    int getFullYear();
+    int fullYear() const;
 
     /**
      Set the date's day value. Out of range values
@@ -112,7 +111,7 @@ public:
      @return String containing three letter month
      representation or empty string.
      */
-    static string monthIntToText(int);
+    static std::string monthIntToText(int);
     
     /**
      Translate a three letter month string to a month digit.
@@ -120,11 +119,11 @@ public:
      @param mon Three letter month string, JAN, FEB, ...
      @return int of the month [1, 12]
      */
-    static int monthTextToInt(string&);
+    static int monthTextToInt(std::string&);
     
     
 private:
-    int day, month, year;
+    int dateDay, dateMonth, dateYear;
 };
 
 #endif	/* _EDFDATE_H */

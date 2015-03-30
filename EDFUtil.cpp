@@ -1,7 +1,7 @@
-/* 
- * File:   EDFUtil.cpp
- *
- * Created on November 6, 2010, 11:55 PM
+/**
+ @file EDFUtil.cpp
+ @author Anthony Magee
+ @date 11/6/2010
  */
 
 #include "EDFUtil.h"
@@ -13,38 +13,6 @@
 using std::cerr;
 using std::endl;
 using std::string;
-
-double a2f(string str) {
-    double val;
-    if (str.compare("") == 0)
-        return 0;
-
-    std::istringstream iss(str);
-    iss >> val;
-
-    if (iss.fail()) {
-        DI(cerr << "* RT  Could not convert string \"" << str << "\" to double" << endl)
-        return std::numeric_limits<double>::infinity();
-    }
-
-    return val;
-}
-
-int a2i(string str) {
-    int val;
-    if (str.compare("") == 0)
-        return 0;
-
-    std::istringstream iss(str);
-    iss >> val;
-
-    if (iss.fail()) {
-        DI(cerr << "* RT  Could not convert string \"" << str << "\" to integer" << endl)
-        return std::numeric_limits<int>::infinity();
-    }
-
-    return val;
-}
 
 string convertSpaces(const string& str) {
     string s = str;

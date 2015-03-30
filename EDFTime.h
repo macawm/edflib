@@ -1,6 +1,6 @@
 /**
  @file EDFTime.h
- @brief A model file for an EDF time.
+ @brief A model object for an EDF time.
  EDF specified times are formatted as such hh.mm.ss
  and must not exclude leading zeros.
 
@@ -13,21 +13,18 @@
 
 #include <string>
 #include <ostream>
-#include <exception>
-
-using std::string;
 
 class EDFTime {
 public:
     EDFTime();
     
     /**
-     Constructor to parse time from string of required format
+     Constructor to parse time from std::string of required format
      "hh.mm.ss". Any format errors will cause the time to be
      set to 00.00.00.
-     @param time String of aforementioned format.
+     @param time std::string of aforementioned format.
      */
-    EDFTime(string);
+    EDFTime(std::string);
     
     /**
      Constructor to build new time object from a positive number
@@ -63,9 +60,9 @@ public:
     EDFTime& operator=(const EDFTime&);
     
     /**
-     Output operator to make a readable string of this object.
+     Output operator to make a readable std::string of this object.
      @param s An output stream reference to place the data into.
-     @param time The time to stringify.
+     @param time The time to std::stringify.
      @return The output stream.
      */
     friend std::ostream& operator<<(std::ostream&, EDFTime);
@@ -74,19 +71,19 @@ public:
      Get the integer hour of this object.
      @return Integer in [0, maxInt].
      */
-    int getHour();
+    int hour() const;
     
     /**
      Get the integer minute of this object.
      @return Integer in [0, 59].
      */
-    int getMin();
+    int minute() const;
     
     /**
      Get the integer second of this object.
      @return Integer in [0, 59].
      */
-    int getSec();
+    int second() const;
 
     /**
      Set the time's hour value.
@@ -98,25 +95,24 @@ public:
      Set the time's minute value.
      @param day Integer value between 0 and 59. (Values below 0 are ignored and values over 59 are rectified as hours and minutes.)
      */
-    void setMin(int);
+    void setMinute(int);
     
     /**
      Set the time's second value.
      @param day Integer value between 0 and 59.
      */
-    void setSec(int);
+    void setSecond(int);
 
     /**
      Get the value of this time object in seconds.
      @return Integer in [0, maxInt]
      */
-    int asSeconds();
+    int asSeconds() const;
     
     
 private:
-    int hour, min, sec;
+    int t_hour, t_min, t_sec;
     
-protected:
     void rectifyTime();
 };
 

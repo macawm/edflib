@@ -1,11 +1,3 @@
-//
-//  EDFLib.h
-//  EDFLIB
-//
-//  Created by Anthony Magee on 3/16/15.
-//
-//
-
 #ifndef EDFLIB_h
 #define EDFLIB_h
 

@@ -1,9 +1,9 @@
 /** 
- @file EDFFile.cpp
- @brief A model and access file for EDF data.
+ @file EDFFile.h
+ @brief A model and access object for EDF data.
  Holds information about the file stream, headers
  and signal data.
-
+ 
  This is the primary access class for extracting
  data from an EDF file.
  
@@ -41,13 +41,13 @@ public:
      Get the header object associated with this file.
      @return EDF header object.
      */
-    EDFHeader* getHeader();
+    EDFHeader* header() const;
     
     /**
      Get the annotations channel information vector.
      @return EDF Annotation vector or nullptr if channel does not exist.
      */
-    std::vector<EDFAnnotation>* getAnnotations();
+    std::vector<EDFAnnotation>* annotations() const;
     
     /**
      Get a portion of a channel's signal information.
@@ -62,12 +62,12 @@ public:
      Attempting to access the annotation channel.
      Attempting to extract data from an nonexistent channel.
      */
-    EDFSignalData* getSignalData(int, double, double);
+    EDFSignalData* extractSignalData(int, double, double);
 
 private:
     std::string filePath;
     std::fstream fileStream;
-    EDFHeader* header;
+    EDFHeader* fileHeader;
     std::vector<EDFAnnotation>* annotation;
 };
 

@@ -1,7 +1,9 @@
-/* 
- * File:   EDFUtil.h
- *
- * Created on November 6, 2010, 11:55 PM
+/**
+ @file EDFUtil.h
+ @brief A set of utility functions.
+ 
+ @author Anthony Magee
+ @date 11/6/2010
  */
 
 #ifndef _EDFUTIL_H
@@ -9,8 +11,6 @@
 
 #include <string>
 
-double a2f(std::string);
-int a2i(std::string);
 std::string convertSpaces(const std::string&);
 std::string convertUnderscores(const std::string&);
 std::string trim(std::string);
@@ -20,6 +20,9 @@ std::string trim(std::string);
 #else
 #define DI(x)
 #endif
+
+// i loop var name, b begin point, e end point, d incrementor value
+#define range_loop(i, b, e, d) for (auto i = (b); i < (e); i+=d)
 
 #endif	/* _EDFUTIL_H */
 
