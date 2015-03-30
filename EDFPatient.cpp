@@ -1,81 +1,88 @@
-/* 
- * File:   EDFPatient.cpp
- * Author: macawm
- * 
- * Created on November 4, 2010, 4:36 PM
+/**
+ @file EDFPatient.cpp
+ @author Anthony Magee
+ @date 11/4/2010
  */
 
 #include "EDFPatient.h"
 #include "EDFUtil.h"
 
-EDFPatient::EDFPatient() : EDFPatient("", "", "", Gender::UNKNOWN, "") {}
+using std::string;
+
+EDFPatient::EDFPatient()
+    : p_code("")
+    , p_name("")
+    , p_additional("")
+    , p_gender(Gender::UNKNOWN)
+    , p_birthdate("")
+{}
 
 EDFPatient::EDFPatient(string newCode, string newName,
         string newAdditional, Gender newGender, string newBirthdate) {
-    code = convertSpaces(newCode);
-    name = convertSpaces(newName);
-    additional = convertSpaces(newAdditional);
-    gender = newGender;
-    birthdate = newBirthdate;
+    p_code = convertSpaces(newCode);
+    p_name = convertSpaces(newName);
+    p_additional = convertSpaces(newAdditional);
+    p_gender = newGender;
+    p_birthdate = newBirthdate;
 }
 
 EDFPatient::EDFPatient(const EDFPatient& orig) {
-    code       = orig.code;
-    name       = orig.name;
-    additional = orig.additional;
-    gender     = orig.gender;
-    birthdate  = orig.birthdate;
+    p_code       = orig.p_code;
+    p_name       = orig.p_name;
+    p_additional = orig.p_additional;
+    p_gender     = orig.p_gender;
+    p_birthdate  = orig.p_birthdate;
 }
 
 EDFPatient& EDFPatient::operator=(const EDFPatient& rhs) {
     if (this != &rhs) {
-        code       = rhs.code;
-        name       = rhs.name;
-        additional = rhs.additional;
-        gender     = rhs.gender;
-        birthdate  = rhs.birthdate;
+        p_code       = rhs.p_code;
+        p_name       = rhs.p_name;
+        p_additional = rhs.p_additional;
+        p_gender     = rhs.p_gender;
+        p_birthdate  = rhs.p_birthdate;
     }
 
     return *this;
 }
 
 std::ostream& operator<<(std::ostream& s, EDFPatient p) {
-    s << "Code           | " << p.code << std::endl;
-    s << "Name           | " << p.name << std::endl;
+    s << "Code           | " << p.p_code << std::endl;
+    s << "Name           | " << p.p_name << std::endl;
     s << "Gender         | ";
-    if (p.gender == Gender::FEMALE)
+    if (p.p_gender == Gender::FEMALE)
         s << "Female" << std::endl;
-    else if(p.gender == Gender::MALE)
+    else if(p.p_gender == Gender::MALE)
         s << "Male" << std::endl;
     else
         s << "X" << std::endl;
-    s << "Birthdate      | " << p.birthdate << std::endl;
-    s << "Additional     | " << p.additional;
+    s << "Birthdate      | " << p.p_birthdate << std::endl;
+    s << "Additional     | " << p.p_additional;
     return s;
 }
 
-string EDFPatient::getCode() { return code; }
-string EDFPatient::getName() { return name; }
-string EDFPatient::getAdditional() { return additional; }
-Gender EDFPatient::getGender() { return gender; }
-string EDFPatient::getBirthdate() { return birthdate; }
+string EDFPatient::code() const { return p_code; }
+string EDFPatient::name() const { return p_name; }
+string EDFPatient::additional() const { return p_additional; }
+Gender EDFPatient::gender() const { return p_gender; }
+string EDFPatient::birthdate() const { return p_birthdate; }
 
 void EDFPatient::setCode(string newCode) {
-    code = convertSpaces(newCode);
+    p_code = convertSpaces(newCode);
 }
 
 void EDFPatient::setName(string newName) {
-    name = convertSpaces(newName);
+    p_name = convertSpaces(newName);
 }
 
 void EDFPatient::setAdditional(string newAdditional) {
-    additional = convertSpaces(newAdditional);
+    p_additional = convertSpaces(newAdditional);
 }
 
 void EDFPatient::setGender(Gender newGender) {
-    gender = newGender;
+    p_gender = newGender;
 }
 
 void EDFPatient::setBirthdate(string newBirthdate) {
-    birthdate = newBirthdate;
+    p_birthdate = newBirthdate;
 }

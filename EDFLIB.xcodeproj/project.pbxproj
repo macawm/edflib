@@ -11,7 +11,6 @@
 		7D48FDB81297017C00799BF4 /* EDFDate.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D48F0231296FD6C00799BF4 /* EDFDate.h */; };
 		7D48FDBA1297017C00799BF4 /* EDFFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D48F0251296FD6C00799BF4 /* EDFFile.h */; };
 		7D48FDBB1297017C00799BF4 /* EDFHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D48F0261296FD6C00799BF4 /* EDFHeader.h */; };
-		7D48FDBC1297017C00799BF4 /* EDFParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D48F0271296FD6C00799BF4 /* EDFParser.h */; };
 		7D48FDBD1297017C00799BF4 /* EDFPatient.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D48F0281296FD6C00799BF4 /* EDFPatient.h */; };
 		7D48FDBE1297017C00799BF4 /* EDFTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D48F0291296FD6C00799BF4 /* EDFTime.h */; };
 		7D48FDBF1297017C00799BF4 /* EDFUtil.h in Headers */ = {isa = PBXBuildFile; fileRef = 7D48F02A1296FD6C00799BF4 /* EDFUtil.h */; };
@@ -19,7 +18,6 @@
 		7D48FDC11297018500799BF4 /* EDFDate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02C1296FD8400799BF4 /* EDFDate.cpp */; };
 		7D48FDC21297018500799BF4 /* EDFFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02D1296FD8400799BF4 /* EDFFile.cpp */; };
 		7D48FDC31297018500799BF4 /* EDFHeader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02E1296FD8400799BF4 /* EDFHeader.cpp */; };
-		7D48FDC41297018500799BF4 /* EDFParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02F1296FD8400799BF4 /* EDFParser.cpp */; };
 		7D48FDC51297018500799BF4 /* EDFPatient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F0301296FD8400799BF4 /* EDFPatient.cpp */; };
 		7D48FDC61297018500799BF4 /* EDFTime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F0311296FD8400799BF4 /* EDFTime.cpp */; };
 		7D48FDC71297018500799BF4 /* EDFUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F0321296FD8400799BF4 /* EDFUtil.cpp */; };
@@ -36,7 +34,6 @@
 		7DBE021F1AB249C100A80E09 /* EDFSignalData.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7DBBC05E129CF24700C7428C /* EDFSignalData.cpp */; };
 		7DBE02201AB249C100A80E09 /* EDFAnnotation.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02B1296FD8400799BF4 /* EDFAnnotation.cpp */; };
 		7DBE02211AB249C100A80E09 /* EDFFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02D1296FD8400799BF4 /* EDFFile.cpp */; };
-		7DBE02221AB249C100A80E09 /* EDFParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7D48F02F1296FD8400799BF4 /* EDFParser.cpp */; };
 		7DBE02241AB7984700A80E09 /* EDFLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 7DBE02231AB797FE00A80E09 /* EDFLib.h */; };
 /* End PBXBuildFile section */
 
@@ -57,7 +54,6 @@
 		7D48F0231296FD6C00799BF4 /* EDFDate.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFDate.h; sourceTree = "<group>"; };
 		7D48F0251296FD6C00799BF4 /* EDFFile.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFFile.h; sourceTree = "<group>"; };
 		7D48F0261296FD6C00799BF4 /* EDFHeader.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFHeader.h; sourceTree = "<group>"; };
-		7D48F0271296FD6C00799BF4 /* EDFParser.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFParser.h; sourceTree = "<group>"; };
 		7D48F0281296FD6C00799BF4 /* EDFPatient.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFPatient.h; sourceTree = "<group>"; };
 		7D48F0291296FD6C00799BF4 /* EDFTime.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFTime.h; sourceTree = "<group>"; };
 		7D48F02A1296FD6C00799BF4 /* EDFUtil.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.h; fileEncoding = 4; path = EDFUtil.h; sourceTree = "<group>"; };
@@ -65,7 +61,6 @@
 		7D48F02C1296FD8400799BF4 /* EDFDate.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFDate.cpp; sourceTree = "<group>"; };
 		7D48F02D1296FD8400799BF4 /* EDFFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFFile.cpp; sourceTree = "<group>"; };
 		7D48F02E1296FD8400799BF4 /* EDFHeader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFHeader.cpp; sourceTree = "<group>"; };
-		7D48F02F1296FD8400799BF4 /* EDFParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFParser.cpp; sourceTree = "<group>"; };
 		7D48F0301296FD8400799BF4 /* EDFPatient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFPatient.cpp; sourceTree = "<group>"; };
 		7D48F0311296FD8400799BF4 /* EDFTime.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFTime.cpp; sourceTree = "<group>"; };
 		7D48F0321296FD8400799BF4 /* EDFUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = EDFUtil.cpp; sourceTree = "<group>"; };
@@ -126,7 +121,6 @@
 				7D48F02C1296FD8400799BF4 /* EDFDate.cpp */,
 				7D48F02D1296FD8400799BF4 /* EDFFile.cpp */,
 				7D48F02E1296FD8400799BF4 /* EDFHeader.cpp */,
-				7D48F02F1296FD8400799BF4 /* EDFParser.cpp */,
 				7D48F0301296FD8400799BF4 /* EDFPatient.cpp */,
 				7D48F0311296FD8400799BF4 /* EDFTime.cpp */,
 				7D48F0321296FD8400799BF4 /* EDFUtil.cpp */,
@@ -142,7 +136,6 @@
 				7D48F0231296FD6C00799BF4 /* EDFDate.h */,
 				7D48F0251296FD6C00799BF4 /* EDFFile.h */,
 				7D48F0261296FD6C00799BF4 /* EDFHeader.h */,
-				7D48F0271296FD6C00799BF4 /* EDFParser.h */,
 				7D48F0281296FD6C00799BF4 /* EDFPatient.h */,
 				7D48F0291296FD6C00799BF4 /* EDFTime.h */,
 				7D48F02A1296FD6C00799BF4 /* EDFUtil.h */,
@@ -197,7 +190,6 @@
 				7D48FDB81297017C00799BF4 /* EDFDate.h in Headers */,
 				7D48FDBA1297017C00799BF4 /* EDFFile.h in Headers */,
 				7D48FDBB1297017C00799BF4 /* EDFHeader.h in Headers */,
-				7D48FDBC1297017C00799BF4 /* EDFParser.h in Headers */,
 				7D48FDBD1297017C00799BF4 /* EDFPatient.h in Headers */,
 				7D48FDBE1297017C00799BF4 /* EDFTime.h in Headers */,
 				7D48FDBF1297017C00799BF4 /* EDFUtil.h in Headers */,
@@ -319,7 +311,6 @@
 				7D48FDC11297018500799BF4 /* EDFDate.cpp in Sources */,
 				7D48FDC21297018500799BF4 /* EDFFile.cpp in Sources */,
 				7D48FDC31297018500799BF4 /* EDFHeader.cpp in Sources */,
-				7D48FDC41297018500799BF4 /* EDFParser.cpp in Sources */,
 				7D48FDC51297018500799BF4 /* EDFPatient.cpp in Sources */,
 				7D48FDC61297018500799BF4 /* EDFTime.cpp in Sources */,
 				7D48FDC71297018500799BF4 /* EDFUtil.cpp in Sources */,
@@ -342,7 +333,6 @@
 				7DBE021F1AB249C100A80E09 /* EDFSignalData.cpp in Sources */,
 				7DBE02201AB249C100A80E09 /* EDFAnnotation.cpp in Sources */,
 				7DBE02211AB249C100A80E09 /* EDFFile.cpp in Sources */,
-				7DBE02221AB249C100A80E09 /* EDFParser.cpp in Sources */,
 				7DBE021E1AB2380000A80E09 /* EDFHeader.cpp in Sources */,
 				7DBE021B1AA79F5F00A80E09 /* EDFDate.cpp in Sources */,
 				7DB8E76B1A9BC68F00F30ACD /* EDFUtil.cpp in Sources */,

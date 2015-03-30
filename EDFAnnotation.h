@@ -1,12 +1,12 @@
 /** 
- * @file EDFAnnotation.h
- * @brief A model file for an EDF annotation element.
- * It is comprised of a starting position (onset), a
- * length of time (duration) and a set of descriptive
- * strings.
- *
- * @author Anthony Magee
- * @date 11/4/2010
+ @file EDFAnnotation.h
+ @brief A model object for an EDF annotation element.
+ It is comprised of a starting position (onset), a
+ length of time (duration) and a set of descriptive
+ strings.
+ 
+ @author Anthony Magee
+ @date 11/4/2010
  */
 
 #ifndef _EDFANNOTATION_H
@@ -15,9 +15,6 @@
 #include <string>
 #include <iostream>
 #include <vector>
-
-using std::string;
-using std::vector;
 
 class EDFAnnotation {
 public:
@@ -31,7 +28,7 @@ public:
      @param duration Time length of the annotation.
      @param strings Descriptive text for the annotation.
      */
-    EDFAnnotation(double, double, vector<string>);
+    EDFAnnotation(double, double, std::vector<std::string>);
     
     /**
      Copy constructor.
@@ -59,19 +56,19 @@ public:
      Get the floating point value of the onset.
      @return Double >= 0.
      */
-    double getOnset();
+    double onset() const;
     
     /**
      Get the floating point value of the duration.
      @return Double >= 0.
      */
-    double getDuration();
+    double duration() const;
     
     /**
      Get the set of descriptive strings.
      @return A vector of strings.
      */
-    vector<string> getStrings();
+    std::vector<std::string> strings() const;
 
     /**
      Set the value of the onset time. Ignores negative values and
@@ -91,19 +88,19 @@ public:
      Set the annotations strings to a new set.
      @param strings New vector of descriptive strings.
      */
-    void setStrings(vector<string>);
+    void setStrings(std::vector<std::string>);
     
     /**
      Add string to strings list.
      @param string String to add.
      */
-    void addString(string);
+    void addString(std::string);
     
 private:
     
-    double onset;
-    double duration;
-    vector<string> strings;
+    double a_onset;
+    double a_duration;
+    std::vector<std::string> a_strings;
 
 };
 
