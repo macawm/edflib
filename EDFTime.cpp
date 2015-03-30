@@ -127,6 +127,12 @@ std::ostream& operator<<(std::ostream& s, EDFTime time) {
     return s;
 }
 
+bool EDFTime::operator==(const EDFTime& rhs) {
+    return this->t_hour == rhs.t_hour &&
+           this->t_min == rhs.t_min &&
+           this->t_sec == rhs.t_sec;
+}
+
 
 int EDFTime::hour() const { return t_hour; }
 

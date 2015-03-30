@@ -58,6 +58,12 @@ public:
      @return The output stream.
      */
     friend std::ostream& operator<<(std::ostream&, EDFDate);
+    
+    /**
+     Test deep equality.
+     @return true if all properties are equal, otherwise false.
+     */
+    bool operator==(const EDFDate&);
 
     /**
      Get the integer day of month value.
@@ -123,7 +129,7 @@ public:
     
     
 private:
-    int dateDay, dateMonth, dateYear;
+    int d_day, d_month, d_year;
 };
 
 #endif	/* _EDFDATE_H */

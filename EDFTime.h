@@ -66,6 +66,12 @@ public:
      @return The output stream.
      */
     friend std::ostream& operator<<(std::ostream&, EDFTime);
+    
+    /**
+     Test deep equality.
+     @return true if all properties are equal, otherwise false.
+     */
+    bool operator==(const EDFTime&);
 
     /**
      Get the integer hour of this object.

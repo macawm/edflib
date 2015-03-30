@@ -17,19 +17,19 @@ EDFDate::EDFDate() : EDFDate(1, 1, 85) {}
 
 EDFDate::EDFDate(int day, int month, int year) {
     if (day < 1 || day > 31)
-	this->dateDay = 1;
+	this->d_day = 1;
     else
-        this->dateDay = day;
+        this->d_day = day;
 
     if (month < 1 || month > 12)
-	this->dateMonth = 1;
+	this->d_month = 1;
     else
-        this->dateMonth = month;
+        this->d_month = month;
 
     if (year < 0 || year > 99)
-        this->dateYear = 85;
+        this->d_year = 85;
     else
-        this->dateYear = year;
+        this->d_year = year;
 }
 
 EDFDate::EDFDate(const string &date) {
@@ -51,26 +51,26 @@ EDFDate::EDFDate(const string &date) {
     }
     
     if (day < 1 || day > 31)
-        this->dateDay = 1;
+        this->d_day = 1;
     else
-        this->dateDay = day;
+        this->d_day = day;
     
     if (month < 1 || month > 12)
-        this->dateMonth = 1;
+        this->d_month = 1;
     else
-        this->dateMonth = month;
+        this->d_month = month;
     
     if (year < 0 || year > 99)
-        this->dateYear = 85;
+        this->d_year = 85;
     else
-        this->dateYear = year;
+        this->d_year = year;
 }
 
 
 EDFDate::EDFDate(const EDFDate& orig) {
-    dateDay = orig.dateDay;
-    dateMonth = orig.dateMonth;
-    dateYear = orig.dateYear;
+    d_day = orig.d_day;
+    d_month = orig.d_month;
+    d_year = orig.d_year;
 }
 
 /**
@@ -79,45 +79,51 @@ EDFDate::EDFDate(const EDFDate& orig) {
 */
 EDFDate& EDFDate::operator=(const EDFDate& rhs) {
     if (this != &rhs) {
-        dateDay = rhs.dateDay;
-        dateMonth = rhs.dateMonth;
-        dateYear = rhs.dateYear;
+        d_day = rhs.d_day;
+        d_month = rhs.d_month;
+        d_year = rhs.d_year;
     }
 
     return *this;
 }
 
 std::ostream& operator<<(std::ostream& s, EDFDate date) {
-    s << std::setw(2) << std::setfill('0') << date.dateDay << ".";
-    s << std::setw(2) << std::setfill('0') << date.dateMonth << ".";
+    s << std::setw(2) << std::setfill('0') << date.d_day << ".";
+    s << std::setw(2) << std::setfill('0') << date.d_month << ".";
     s << date.fullYear();
     return s;
 }
 
-int EDFDate::day() const { return dateDay; }
-int EDFDate::month() const { return dateMonth; }
-int EDFDate::year() const { return dateYear; }
-int EDFDate::fullYear() const { return (this->dateYear > 84) ? 1900 + this->dateYear : 2000 + this->dateYear; }
+bool EDFDate::operator==(const EDFDate& rhs) {
+    return this->d_day == rhs.d_day &&
+           this->d_month == rhs.d_month &&
+           this->d_year == rhs.d_year;
+}
+
+int EDFDate::day() const { return d_day; }
+int EDFDate::month() const { return d_month; }
+int EDFDate::year() const { return d_year; }
+int EDFDate::fullYear() const { return (this->d_year > 84) ? 1900 + this->d_year : 2000 + this->d_year; }
 
 void EDFDate::setDay(int day) {
     if (day < 1 || day > 31)
-        this->dateDay = 1;
+        this->d_day = 1;
     else
-        this->dateDay = day;
+        this->d_day = day;
 }
 
 void EDFDate::setMonth(int month) {
     if (month < 1 || month > 12)
-        this->dateMonth = 1;
+        this->d_month = 1;
     else
-        this->dateMonth = month;
+        this->d_month = month;
 }
 
 void EDFDate::setYear(int year) {
     if (year < 0 || year > 99)
-        this->dateYear = 85;
+        this->d_year = 85;
     else
-        this->dateYear = year;
+        this->d_year = year;
 }
 
 

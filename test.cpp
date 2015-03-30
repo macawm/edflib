@@ -17,24 +17,24 @@ void printHeaderInfo(string filename, EDFHeader* head) {
     cout << "File \"" << filename << "\"" << endl << endl << endl;
     cout << "Header Info" << endl << endl;
     cout << "File Type            | ";
-    if (head->getFiletype() == FileType::EDF)
+    if (head->filetype() == FileType::EDF)
         cout << "EDF" << endl;
     else
-        cout << "EDF+" << (head->getContinuity() == Continuity::CONTINUOUS ? "C" : "D") << endl;
-    cout << "Signal Count         | " << head->getSignalCount() << endl;
-    cout << "Recording Length     | " << head->getDataRecordCount() * head->getDataRecordDuration() << " seconds" << endl;
-    cout << "Start Date           | " << head->getDate() << endl;
-    cout << "Start Time           | " << head->getStartTime() << endl;
-    cout << "Recording            | " << head->getRecording() << endl;
-    cout << "Patient Info ---------" << endl << head->getPatient() << endl;
-    cout << "Admin Code           | " << head->getAdminCode() << endl;
-    cout << "Technician           | " << head->getTechnician() << endl;
-    cout << "Equipment            | " << head->getEquipment() << endl;
-    cout << "Recording Additional | " << head->getRecordingAdditional() << endl;
-    cout << "Record Duration      | " << head->getDataRecordDuration() << " seconds" << endl;
-    cout << "Data Record Count    | " << head->getDataRecordCount() << endl;
-    cout << "Data Record Size     | " << head->getDataRecordSize() << endl;
-    cout << "Annotation Signal    | " << head->getAnnotationIndex() + 1 << endl;
+        cout << "EDF+" << (head->continuity() == Continuity::CONTINUOUS ? "C" : "D") << endl;
+    cout << "Signal Count         | " << head->signalCount() << endl;
+    cout << "Recording Length     | " << head->dataRecordCount() * head->dataRecordDuration() << " seconds" << endl;
+    cout << "Start Date           | " << head->date() << endl;
+    cout << "Start Time           | " << head->startTime() << endl;
+    cout << "Recording            | " << head->recording() << endl;
+    cout << "Patient Info ---------" << endl << head->patient() << endl;
+    cout << "Admin Code           | " << head->adminCode() << endl;
+    cout << "Technician           | " << head->technician() << endl;
+    cout << "Equipment            | " << head->equipment() << endl;
+    cout << "Recording Additional | " << head->recordingAdditional() << endl;
+    cout << "Record Duration      | " << head->dataRecordDuration() << " seconds" << endl;
+    cout << "Data Record Count    | " << head->dataRecordCount() << endl;
+    cout << "Data Record Size     | " << head->dataRecordSize() << endl;
+    cout << "Annotation Signal    | " << head->annotationIndex() + 1 << endl;
     cout << endl << endl;
 }
 
@@ -45,7 +45,7 @@ void printAnnotationInfo(vector<EDFAnnotation>* annot) {
     
     int onsetWidth = 2;
     EDFAnnotation last = *(--annot->end());
-    int l = last.getOnset();
+    int l = last.onset();
     while (l > 0) {
         l /= 10;
         onsetWidth++;
@@ -60,10 +60,11 @@ void printAnnotationInfo(vector<EDFAnnotation>* annot) {
     
     for (size_t i = 0; i < annot->size(); i++) {
         cout << " " << std::setw(idxWidth) << i+1;
-        cout << " Onset " << std::setw(onsetWidth) << annot->at(i).getOnset() << "s";
-        cout << " Duration " << std::setw(8) << annot->at(i).getDuration() << "s";
-        for (size_t j = 0; j < annot->at(i).getStrings().size(); j++)
-            cout << " \"" << (annot->at(i).getStrings())[j] << "\" ";
+        cout << " Onset " << std::setw(onsetWidth) << annot->at(i).onset() << "s";
+        cout << " Duration " << std::setw(8) << annot->at(i).duration() << "s";
+        vector<string> strings = annot->at(i).strings();
+        for (size_t j = 0; j < strings.size(); j++)
+            cout << " \"" << strings[j] << "\" ";
         cout << endl;
     }
     cout << endl;
@@ -72,39 +73,39 @@ void printAnnotationInfo(vector<EDFAnnotation>* annot) {
 void printSignalInfo(int sig, EDFHeader* head) {
     cout << fixed << setprecision(4);
     cout << "Signal (" << sig + 1 << ") Info" << endl << endl;
-    cout << "Label                | " << head->getLabel(sig) << endl;
-    cout << "Record Samples       | " << head->getDataRecordCount() * head->getSignalSampleCount(sig) << endl;
-    cout << "Sample Count         | " << head->getSignalSampleCount(sig) << endl;
-    cout << "Physical Max         | " << head->getPhysicalMax(sig) << endl;
-    cout << "Physical Min         | " << head->getPhysicalMin(sig) << endl;
-    cout << "Physical Dimension   | " << head->getPhysicalDimension(sig) << endl;
-    cout << "Digital Max          | " << head->getDigitalMax(sig) << endl;
-    cout << "Digital Min          | " << head->getDigitalMin(sig) << endl;
-    cout << "Prefilter            | " << head->getPrefilter(sig) << endl;
-    cout << "Transducer           | " << head->getTransducer(sig) << endl;
+    cout << "Label                | " << head->label(sig) << endl;
+    cout << "Record Samples       | " << head->dataRecordCount() * head->signalSampleCount(sig) << endl;
+    cout << "Sample Count         | " << head->signalSampleCount(sig) << endl;
+    cout << "Physical Max         | " << head->physicalMax(sig) << endl;
+    cout << "Physical Min         | " << head->physicalMin(sig) << endl;
+    cout << "Physical Dimension   | " << head->physicalDimension(sig) << endl;
+    cout << "Digital Max          | " << head->digitalMax(sig) << endl;
+    cout << "Digital Min          | " << head->digitalMin(sig) << endl;
+    cout << "Prefilter            | " << head->prefilter(sig) << endl;
+    cout << "Transducer           | " << head->transducer(sig) << endl;
     cout << endl << endl;
 }
 
 void printAllSignalInfo(EDFHeader* head) {
     cout << fixed << setprecision(4);
-    for (int sig = 0; sig < head->getSignalCount() && sig != head->getAnnotationIndex(); sig++) {
+    for (int sig = 0; sig < head->signalCount() && sig != head->annotationIndex(); sig++) {
         cout << "Signal (" << sig + 1 << ") Info" << endl << endl;
-        cout << "Label                | " << head->getLabel(sig) << endl;
-        cout << "Record Samples       | " << head->getDataRecordCount() * head->getSignalSampleCount(sig) << endl;
-        cout << "Sample Count         | " << head->getSignalSampleCount(sig) << endl;
-        cout << "Physical Max         | " << head->getPhysicalMax(sig) << endl;
-        cout << "Physical Min         | " << head->getPhysicalMin(sig) << endl;
-        cout << "Physical Dimension   | " << head->getPhysicalDimension(sig) << endl;
-        cout << "Digital Max          | " << head->getDigitalMax(sig) << endl;
-        cout << "Digital Min          | " << head->getDigitalMin(sig) << endl;
-        cout << "Prefilter            | " << head->getPrefilter(sig) << endl;
-        cout << "Transducer           | " << head->getTransducer(sig) << endl;
+        cout << "Label                | " << head->label(sig) << endl;
+        cout << "Record Samples       | " << head->dataRecordCount() * head->signalSampleCount(sig) << endl;
+        cout << "Sample Count         | " << head->signalSampleCount(sig) << endl;
+        cout << "Physical Max         | " << head->physicalMax(sig) << endl;
+        cout << "Physical Min         | " << head->physicalMin(sig) << endl;
+        cout << "Physical Dimension   | " << head->physicalDimension(sig) << endl;
+        cout << "Digital Max          | " << head->digitalMax(sig) << endl;
+        cout << "Digital Min          | " << head->digitalMin(sig) << endl;
+        cout << "Prefilter            | " << head->prefilter(sig) << endl;
+        cout << "Transducer           | " << head->transducer(sig) << endl;
         cout << endl << endl;
     }
 }
 
 void printSignalData(EDFFile& file, int signal, float start, float length) {
-    EDFSignalData* sigData = file.getSignalData(signal, start, length);
+    EDFSignalData* sigData = file.extractSignalData(signal, start, length);
     cout << *sigData;
 }
 
@@ -112,8 +113,8 @@ int main(int argc, char** argv) {
     EDFFile *newFile = new EDFFile(argv[1]);
     int signal = atoi(argv[2]) - 1;
 
-    EDFHeader* header = newFile->getHeader();
-    vector<EDFAnnotation>* annotations = newFile->getAnnotations();
+    EDFHeader* header = newFile->header();
+    vector<EDFAnnotation>* annotations = newFile->annotations();
 
     printHeaderInfo(argv[1], header);
     printSignalInfo(signal, header);
