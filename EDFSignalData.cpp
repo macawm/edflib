@@ -67,9 +67,10 @@ std::ostream& operator<<(std::ostream& s, EDFSignalData& data) {
     
     int i = 0;
     for (auto bit : raw) {
-        if (i % 20 == 0)
+        if (i % 10 == 0)
             s << std::endl << std::setw(width) << i << ":  ";
-        s << bit << " ";
+        s << int(bit) << " ";
+        i++;
     }
     s << std::endl << std::endl;
     
