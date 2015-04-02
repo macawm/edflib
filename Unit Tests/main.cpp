@@ -6,7 +6,7 @@
 //
 //
 
-#define CATCH_CONFIG_MAIN
+#define CATCH_CONFIG_RUNNER
 
 #include "EDFLib.h"
 #include "catch.hpp"
@@ -17,6 +17,31 @@
 
 using std::string;
 using std::vector;
+
+string sampleFilePath;
+
+int main (int argc, char* const argv[]) {
+    int catchArgIndex = -1;
+    string arg;
+    for (int i = 1; i < argc; i++) {
+        arg = string(argv[i]);
+        if (arg.length() == 2 && arg.compare("--") == 0) {
+            catchArgIndex = i;
+            break;
+        }
+    }
+
+    if (argc - catchArgIndex > 2)
+        return -1;
+
+    sampleFilePath = string(argv[catchArgIndex + 1]);
+
+    return Catch::Session().run(catchArgIndex, argv);
+}
+
+
+
+
 
 /***** UTILS *****/
 
@@ -616,7 +641,7 @@ TEST_CASE("SignalData - stats numerical stability") {
 /***** FILE *****/
 
 TEST_CASE("File - Constructor") {
-    EDFFile newFile("../../../../../sample.edf"); // this nasty, but it works on *nix filesystems
+    EDFFile newFile(sampleFilePath.c_str()); // this nasty, but it works on *nix filesystems
     EDFHeader* header = newFile.header();
     
     SECTION("check a known file header") {
@@ -774,7 +799,7 @@ TEST_CASE("Header - Constructor") {
 }
 
 TEST_CASE("Header - copy constructor") {
-    EDFFile newFile("../../../../../sample.edf"); // this nasty, but it works on *nix filesystems
+    EDFFile newFile(sampleFilePath.c_str()); // this nasty, but it works on *nix filesystems
     EDFHeader h1 = *newFile.header();
     
     EDFHeader *h2 = new EDFHeader(h1);
