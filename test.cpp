@@ -104,11 +104,6 @@ void printAllSignalInfo(EDFHeader* head) {
     }
 }
 
-void printSignalData(EDFFile& file, int signal, float start, float length) {
-    EDFSignalData* sigData = file.extractSignalData(signal, start, length);
-    cout << *sigData;
-}
-
 int main(int argc, char** argv) {
     EDFFile *newFile = new EDFFile(argv[1]);
     int signal = atoi(argv[2]) - 1;
@@ -123,12 +118,16 @@ int main(int argc, char** argv) {
     double startTime = 0.0; // seconds
     double length = 2.0; // seconds
     cout << startTime << "s -> " << startTime + length << "s" << endl;
-    printSignalData(*newFile, signal, startTime, length);
+    EDFSignalData* sigData = newFile->extractSignalData(signal, startTime, length);
+    cout << *sigData;
+    delete sigData;
 
     startTime = 1.0;
     length = 1.0;
     cout << startTime << "s -> " << startTime + length << "s" << endl;
-    printSignalData(*newFile, signal, startTime, length);
+    sigData = newFile->extractSignalData(signal, startTime, length);
+    cout << *sigData;
+    delete sigData;
     
     delete newFile;
 
